@@ -1,7 +1,8 @@
 <?php
 $menu = [
 	'home' => 'home',
-	'datalist' => 'html/datalist'
+	'datalist' => 'html/datalist',
+	'git' => 'git'
 ];
 ?>
 
