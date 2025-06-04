@@ -129,6 +129,49 @@ class Play
 
 
 
+	public static function git()
+	{
+		if (!empty($_GET['command'])) {
+			$command = $_GET['command'];
+			$res['file'] = self::$build . self::$ds . 'git' . self::$ds . $command . '.php';
+			$res['command'] = $command;
+			return $res;
+		}
+		return [];
+	}
+
+
+
+	public static function gitCommand()
+	{
+		$res = self::git();
+		if (!empty($res['command'])) {
+			$cmdFile = $res['file'];
+			if (file_exists($cmdFile)) {
+				return include $cmdFile;
+			}
+		}
+	}
+
+
+
+	public static function gitTitle()
+	{
+		$res = self::git();
+		if (!empty($res['command'])) {
+			return ucwords($res['command']);
+		}
+	}
+
+
+
+	public static function gitZero()
+	{
+		return self::$build . self::$ds . 'git'.self::$ds.'zero.php';
+	}
+
+
+
 	protected static function formatTitle($title)
 	{
 		$title = str_replace('/', ' » ', $title);
