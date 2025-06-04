@@ -52,14 +52,13 @@ if (!empty($_POST['command'])) {
 		if (str_contains($command, 'clone')) {
 			$command = trim($command);
 			$command = json_decode($command) . ' .';
-			var_dump($command);
+			// var_dump($command);
 			$res .= Git::run($command, $path);
 		} else {
 			$decoded = json_decode($command, true);
 			if (json_last_error() === JSON_ERROR_NONE && is_array($decoded)) {
 
 				foreach ($decoded as $cmd) {
-					// exit;
 					$res .= Git::run($cmd, $path);
 				}
 
@@ -67,20 +66,6 @@ if (!empty($_POST['command'])) {
 				$res .= Git::run($command, $path);
 			}
 		}
-
-		// var_dump($command);
-		// exit;
-		// 	if (str_contains($command, 'clone')) {
-		// 		Git::run($command, $path);
-		// 	} else {
-		// 		if (json_last_error() === JSON_ERROR_NONE && is_array($decoded)) {
-		// 			foreach ($decoded as $command) {
-		// 				Git::run($command, $path);
-		// 			}
-		// 		} else {
-		// 			Git::run($command, $path);
-		// 		}
-		// 	}
 	}
 	echo $res . '</div>';
 }

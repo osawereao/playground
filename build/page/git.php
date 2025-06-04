@@ -15,7 +15,9 @@ function isCommands(array $command): bool
 	<a href="/git?command=version">version</a> |
 	<a href="/git?command=branch">branch</a> |
 	<a href="/git?command=working" title="<?php echo $branch; ?>">working</a> |
-	<a href="/git?command=initialize" title="<?php echo $branch; ?>">initialize</a>
+	<a href="/git?command=initialize" title="<?php echo $branch; ?>">initialize</a> |
+	<a href="/git?command=tracking" title="<?php echo $branch; ?>">tracking</a> |
+	<a href="/git?command=delete" title="<?php echo $branch; ?>">delete</a>
 </p>
 
 <form method="post">
