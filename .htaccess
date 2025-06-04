@@ -8,6 +8,7 @@ RewriteRule ^ - [L]
 
 # Exclude any path that begins with "asset/"
 RewriteCond %{REQUEST_URI} !^/asset/
+RewriteCond %{REQUEST_URI} !^/ajax/
 
 # Route all other requests to index.php and pass the path as a parameter
 RewriteRule ^(.*)$ index.php?slug=$1 [L,QSA]
