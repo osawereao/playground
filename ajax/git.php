@@ -38,7 +38,15 @@ if (!empty($_POST['command'])) {
 	if ($command === 'version') {
 		Git::version();
 	} else {
-		Git::run($command, $path);
+
+		$decoded = json_decode($command, true);
+		if (json_last_error() === JSON_ERROR_NONE && is_array($decoded)) {
+			foreach ($decoded as $command) {
+				Git::run($command, $path);
+			}
+		} else {
+			Git::run($command, $path);
+		}
 	}
 	echo '</div>';
 }
