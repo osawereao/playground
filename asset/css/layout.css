@@ -11,20 +11,22 @@ form div {
 label {
 	display: block;
 	padding-top: 2px;
-	color: #4F1C51;
-	font-size: 0.85rem;
+	color: #4f1c51;
+	font-size: 0.8rem;
 }
 
 label + input {
 	margin-top: 1px;
 }
 
+input[type="text"],
 input[list] {
 	border: 1px solid #12151a;
 	padding: 1px 5px;
 	transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
+input[type="text"]:focus,
 input[list]:focus {
 	background-color: #e6f0ff;
 	border-color: #0066ff;
@@ -56,5 +58,5 @@ main h2 {
 	font-size: 0.9rem;
 	font-weight: bold;
 	margin-bottom: 0.5rem;
-	color: #A55B4B;
+	color: #a55b4b;
 }
